@@ -1,3 +1,15 @@
 .content-container {
     padding: 5vh;
 }
+
+.question-card {
+    margin: 2vh 0;
+}
+
+.answers-container {
+    margin: 0 0 0 5vh;
+}
+
+.button {
+    margin: 1vh 0;
+}
