@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="h2">{{ title }}</div>
-    {% include 'basic/content_card.html' %}
-    {% include 'basic/content_card.html' %}
-    {% include 'basic/content_card.html' %}
+    {% for question in questions %}
+        {% include 'basic/content_card.html' with card=question %}
+    {% endfor %}
 {% endblock %}
