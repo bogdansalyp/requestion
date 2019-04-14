@@ -42,3 +42,8 @@ def ask(request):
     template = loader.get_template("ask.html")
     context = {}
     return HttpResponse(template.render(context, request))
+
+def settings(request):
+    template = loader.get_template("settings.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
