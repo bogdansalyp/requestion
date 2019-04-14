@@ -1,33 +1,44 @@
 from django.http import HttpResponse
 from django.template import loader
 
+
 def main(request):
-    template = loader.get_template('index.html')
-    context = {
-        "title": "New Questions"
-    }
+    template = loader.get_template("index.html")
+    context = {}
     return HttpResponse(template.render(context, request))
 
 
 def hot(request):
-    return HttpResponse("Hot questions")
+    template = loader.get_template("index.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 
 def tag(request, tag_name):
-    return HttpResponse(tag_name)
+    template = loader.get_template("tag.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 
 def question(request, question_id):
-    return HttpResponse(question_id)
+    template = loader.get_template("question.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 
 def login(request):
-    return HttpResponse("Login")
+    template = loader.get_template("login.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 
 def signup(request):
-    return HttpResponse("Signup")
+    template = loader.get_template("signup.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 
 def ask(request):
-    return HttpResponse("Ask a question")
+    template = loader.get_template("ask.html")
+    context = {}
+    return HttpResponse(template.render(context, request))

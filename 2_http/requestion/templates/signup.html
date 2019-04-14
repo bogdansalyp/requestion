@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="h2">Log In</div>
+<div class="alert alert-danger" role="alert">
+    This email is already taken!
+</div>
+<form>
+    <div class="form-group">
+        <label for="signup-login">Login</label>
+        <input class="form-control" id="signup-login" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" class="form-control" id="signup-email" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="signup-nickname">Nickname</label>
+        <input class="form-control" id="signup-nickname" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" class="form-control" id="signup-password" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="signup-repeat-password">Repeat password</label>
+        <input type="password" class="form-control" id="signup-repeat-password" placeholder="">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+{% endblock %}
