@@ -2,117 +2,13 @@
 
 {% block content %}
 <div class="h2">{{ title }}</div>
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-2">
-                <div>
-                    <img src="img/tmp.jpg" class="card-img-top">
-                </div>
-                <div class="input-group container">
-                    <div class="row">
-                        <input type="text" class="form-control col-md-8" placeholder="0">
-                        <div class="btn-group-vertical col-md-4" role="group">
-                            <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▲</small></button>
-                            <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▼</small></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div>
-                    <h5 class="card-title">How to build a Moon park?</h5>
-                    <p>Guys, I have a trouble with a Moon park...</p>
-                    <div class="row">
-                        <div class="col-md-9">
-                            Tags:
-                            <a href="#"><span class="badge badge-primary badge-link">perl</span></a>
-                            <a href="#"><span class="badge badge-primary badge-link">Python</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% include 'content_card.html' %}
 <hr/>
 <div class="answers-container">
-    <div class="card question-card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-2">
-                    <div>
-                        <img src="img/tmp.jpg" class="card-img-top">
-                    </div>
-                    <div class="input-group container">
-                        <div class="row">
-                            <input type="text" class="form-control col-md-8" placeholder="0">
-                            <div class="btn-group-vertical col-md-4" role="group">
-                                <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▲</small></button>
-                                <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▼</small></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-10">
-                    <div>
-                        <p>Have no idea...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card question-card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-2">
-                    <div>
-                        <img src="img/tmp.jpg" class="card-img-top">
-                    </div>
-                    <div class="input-group container">
-                        <div class="row">
-                            <input type="text" class="form-control col-md-8" placeholder="0">
-                            <div class="btn-group-vertical col-md-4" role="group">
-                                <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▲</small></button>
-                                <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▼</small></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-10">
-                    <div>
-                        <p>Me too...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include 'content_card.html' %}
+    {% include 'content_card.html' %}
     <div class="answers-container ">
-        <div class="card question-card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div>
-                            <img src="img/tmp.jpg" class="card-img-top">
-                        </div>
-                        <div class="input-group container">
-                            <div class="row">
-                                <input type="text" class="form-control col-md-8" placeholder="0">
-                                <div class="btn-group-vertical col-md-4" role="group">
-                                    <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▲</small></button>
-                                    <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▼</small></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div>
-                            <p>Hello</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include 'content_card.html' %}
     </div>
 </div>
 <div class="input-group">
