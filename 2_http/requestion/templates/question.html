@@ -1,14 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'basic/base.html' %}
 
 {% block content %}
 <div class="h2">{{ title }}</div>
-{% include 'content_card.html' %}
+{% include 'basic/content_card.html' %}
 <hr/>
 <div class="answers-container">
-    {% include 'content_card.html' %}
-    {% include 'content_card.html' %}
+    {% include 'basic/content_card.html' %}
+    {% include 'basic/content_card.html' %}
     <div class="answers-container ">
-        {% include 'content_card.html' %}
+        {% include 'basic/content_card.html' %}
     </div>
 </div>
 <div class="input-group">
