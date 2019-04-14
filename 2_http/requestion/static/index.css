@@ -1,3 +1,20 @@
+.input-special {
+    transition: 0.5s;
+}
+
+.input-special:hover {
+    padding-left: 1.5rem;
+    padding-right: 0rem;
+}
+
+.badge-special {
+    transition: 0.5s;
+}
+
+.badge-special:hover {
+    padding: .25em 1em;
+}
+
 .content-container {
     padding: 5vh;
 }
