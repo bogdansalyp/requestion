@@ -13,3 +13,7 @@
 .button {
     margin: 1vh 0;
 }
+
+.badge-link:hover {
+    text-decoration: underline;
+} 
