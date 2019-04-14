@@ -1,32 +1,34 @@
-<div class="card question-card">
+{% load static %}
+
+<div class="card question-card" style="cursor: pointer;" onclick="window.location='#'">
     <div class="card-body">
         <div class="row">
             <div class="col-md-2">
                 <div>
-                    <img src="img/tmp.jpg" class="card-img-top">
+                    <img src="{% static 'tmp.jpg' %}" class="card-img-top">
                 </div>
                 <div class="input-group container">
                     <div class="row">
                         <input type="text" class="form-control col-md-8" placeholder="0">
                         <div class="btn-group-vertical col-md-4" role="group">
-                            <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▲</small></button>
-                            <button type="button" class="btn btn-primary btn-sm btn-spinner"><small>▼</small></button>
+                            <button type="button" class="btn btn-outline-primary btn-sm btn-spinner"><small class="small-glyph">▲</small></button>
+                            <button type="button" class="btn btn-outline-primary btn-sm btn-spinner"><small class="small-glyph">▼</small></button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-10">
-                <div>
+                <div class="card-text">
                     <h5 class="card-title">{{ card.title }}</h5>
                     <p>{{ card.text }}</p>
-                    <div class="row">
-                        <div class="col-md-3">
+                    <div class="row card-text-bottom">
+                        <div class="col-md-5">
                             <a href="#" class="card-link">answers({{ card.answers_amount }})</a>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-7">
                             Tags:
                             {% for tag in card.tags %}
-                                <span class="badge badge-primary">{{ tag }}</span>
+                                <a href="#"><span class="badge badge-primary badge-link badge-special">{{ tag }}</span></a>
                             {% endfor %}
                         </div>
                     </div>

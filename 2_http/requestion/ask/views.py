@@ -8,17 +8,11 @@ def main(request):
         "title": "New Question",
         "questions": [
             {
-                "title": "How to build a moon park?",
-                "text": "Guys, I have a trouble with a Moon park...",
-                "tags": ["perl", "python", "moon"],
-                "answers_amount": 3
-            },
-            {
                 "title": "How the hell?!?!?!",
                 "text": "Test test test",
                 "tags": ["test", "test2", "test3"],
                 "answers_amount": 42
-            }
+            } for _ in range(50)
         ]
     }
     return HttpResponse(template.render(context, request))
