@@ -35,7 +35,21 @@ def hot(request):
 def tag(request, tag_name):
     template = loader.get_template("tag.html")
     context = {
-        "title": "Questions by tag '{}'".format(tag_name)
+        "title": "Questions by tag '{}'".format(tag_name),
+        "questions": [
+            {
+                "title": "How to build a moon park?",
+                "text": "Guys, I have a trouble with a Moon park...",
+                "tags": [tag_name, "perl", "python", "moon"],
+                "answers_amount": 3
+            },
+            {
+                "title": "How the hell?!?!?!",
+                "text": "Test test test",
+                "tags": [tag_name, "test", "test2", "test3"],
+                "answers_amount": 42
+            }
+        ]
     }
     return HttpResponse(template.render(context, request))
 
