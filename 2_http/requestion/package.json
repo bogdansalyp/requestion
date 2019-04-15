@@ -1,0 +1,17 @@
+{
+  "name": "requestion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autopep": "find  . -name '*.py' | xargs autopep8 --in-place --aggressive --aggressive",
+    "scss-compile": "node-sass static/scss/index.scss static/css/index.css",
+    "start": "python3 manage.py runserver"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "scss-compile": "^0.1.7"
+  }
+}

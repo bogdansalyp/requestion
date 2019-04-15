@@ -27,19 +27,38 @@ texts = [
 ]
 
 question_tags = [
-    "python", "perl", "django", "js", "webpack", "react", "redux", "keras", "tensorflow",
-    "tensorboard", "numpy", "pandas", "datascience", "http", "docker", "babel"
-]
+    "python",
+    "perl",
+    "django",
+    "js",
+    "webpack",
+    "react",
+    "redux",
+    "keras",
+    "tensorflow",
+    "tensorboard",
+    "numpy",
+    "pandas",
+    "datascience",
+    "http",
+    "docker",
+    "babel"]
 
 best_members = [
-    "Volodin", "Voloshin", "Dart Veider", "Van Halen", "shkolnik1998", "hellboy3000",
-    "DoomGuy", "Elon Musk", "Elon Tusk"
-]
+    "Volodin",
+    "Voloshin",
+    "Dart Veider",
+    "Van Halen",
+    "shkolnik1998",
+    "hellboy3000",
+    "DoomGuy",
+    "Elon Musk",
+    "Elon Tusk"]
 
 
 def main(request):
     template = loader.get_template("index.html")
-    
+
     context = {
         "title": "New Question",
         "questions": [
@@ -47,19 +66,18 @@ def main(request):
                 "id": 42,
                 "title": np.random.choice(titles),
                 "text": np.random.choice(texts),
-                "tags": [np.random.choice(question_tags) for _ in range(np.random.randint(1, 5))],
-                "answers_amount": np.random.randint(100)
-            } for _ in range(50)
-        ],
+                "tags": [
+                    np.random.choice(question_tags) for _ in range(
+                        np.random.randint(
+                            1,
+                            5))],
+                "answers_amount": np.random.randint(100)} for _ in range(50)],
         "side_tags": {
             "title": "Popular Tags",
-            "tags": question_tags
-        },
+            "tags": question_tags},
         "best_members": {
             "title": "Best Members",
-            "tags": best_members
-        }
-    }
+            "tags": best_members}}
     return HttpResponse(template.render(context, request))
 
 
@@ -171,6 +189,7 @@ def ask(request):
         }
     }
     return HttpResponse(template.render(context, request))
+
 
 def settings(request):
     template = loader.get_template("settings.html")

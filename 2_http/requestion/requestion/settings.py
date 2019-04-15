@@ -119,5 +119,6 @@ USE_TZ = True
 
 STATIC_URL = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Here you tell django to look for a folder named 'assets'
+    # Here you tell django to look for a folder named 'assets'
+    os.path.join(BASE_DIR, 'static'),
 ]

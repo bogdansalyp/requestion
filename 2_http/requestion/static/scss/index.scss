@@ -1,18 +1,18 @@
 .input-special {
     transition: 0.5s;
-}
 
-.input-special:hover {
-    padding-left: 1.5rem;
-    padding-right: 0rem;
+    &:hover {
+        padding-left: 1.5rem;
+        padding-right: 0rem;
+    }
 }
 
 .badge-special {
     transition: 0.5s;
-}
 
-.badge-special:hover {
-    padding: .25em 1em;
+    &:hover {
+        padding: .25em 1em;
+    }
 }
 
 .card-text {
@@ -34,28 +34,28 @@
 
 .card-body {
     transition: 0.5s;
-}
 
-.card-body:hover {
-    padding-left: 2em;
-    padding-right: 0.5em;
+    &:hover {
+        padding-left: 2em;
+        padding-right: 0.5em;
+    }
 }
 
 .card-title {
     position: relative;
     display: inline-block;
-}
 
-.card-title:after {
-    content: '';
-    position: absolute;
-    width: 0; height: 3px;
-    display: block;
-    margin-top: 2px;
-    right: 0;
-    background: #000000;
-    transition: width .2s ease;
-    -webkit-transition: width .2s ease;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0; height: 3px;
+        display: block;
+        margin-top: 2px;
+        right: 0;
+        background: #000000;
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;
+    }
 }
 
 .card-body:hover .card-title:after{
@@ -67,24 +67,24 @@
 .underlined-title {
     position: relative;
     display: inline-block;
-}
 
-.underlined-title:after {
-    content: '';
-    position: absolute;
-    width: 0; height: 4px;
-    display: block;
-    margin-top: -2px;
-    right: 0;
-    background: #000000;
-    transition: width .2s ease;
-    -webkit-transition: width .2s ease;
-}
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0; height: 4px;
+        display: block;
+        margin-top: -2px;
+        right: 0;
+        background: #000000;
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;
+    }
 
-.underlined-title:hover:after{
-    width: 100%;
-    left: 0;
-    background: #000000;
+    &:hover:after {
+        width: 100%;
+        left: 0;
+        background: #000000;
+    }
 }
 
 .sidetag-container {
@@ -122,8 +122,10 @@
     margin: 1vh 0;
 }
 
-.badge-link:hover {
-    text-decoration: underline;
+.badge-link {
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .btn-spinner {
