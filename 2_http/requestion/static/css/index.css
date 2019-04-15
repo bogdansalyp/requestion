@@ -1,14 +1,3 @@
-.input-special {
-  transition: 0.5s; }
-  .input-special:hover {
-    padding-left: 1.5rem;
-    padding-right: 0rem; }
-
-.badge-special {
-  transition: 0.5s; }
-  .badge-special:hover {
-    padding: .25em 1em; }
-
 .card-text {
   padding-bottom: 10%; }
 
@@ -28,6 +17,10 @@
   .card-body:hover {
     padding-left: 2em;
     padding-right: 0.5em; }
+    .card-body:hover .card-title:after {
+      width: 100%;
+      left: 0;
+      background: #000000; }
 
 .card-title {
   position: relative;
@@ -44,10 +37,16 @@
     transition: width .2s ease;
     -webkit-transition: width .2s ease; }
 
-.card-body:hover .card-title:after {
-  width: 100%;
-  left: 0;
-  background: #000000; }
+.input-special {
+  transition: 0.5s; }
+  .input-special:hover {
+    padding-left: 1.5rem;
+    padding-right: 0rem; }
+
+.badge-special {
+  transition: 0.5s; }
+  .badge-special:hover {
+    padding: .25em 1em; }
 
 .underlined-title {
   position: relative;

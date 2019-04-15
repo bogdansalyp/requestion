@@ -1,3 +1,5 @@
+@import 'question-card.scss';
+
 .input-special {
     transition: 0.5s;
 
@@ -13,55 +15,6 @@
     &:hover {
         padding: .25em 1em;
     }
-}
-
-.card-text {
-    padding-bottom: 10%;
-}
-
-.card-content {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-}
-
-.card-content-bottom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.card-body {
-    transition: 0.5s;
-
-    &:hover {
-        padding-left: 2em;
-        padding-right: 0.5em;
-    }
-}
-
-.card-title {
-    position: relative;
-    display: inline-block;
-
-    &:after {
-        content: '';
-        position: absolute;
-        width: 0; height: 3px;
-        display: block;
-        margin-top: 2px;
-        right: 0;
-        background: #000000;
-        transition: width .2s ease;
-        -webkit-transition: width .2s ease;
-    }
-}
-
-.card-body:hover .card-title:after{
-    width: 100%;
-    left: 0;
-    background: #000000;
 }
 
 .underlined-title {
