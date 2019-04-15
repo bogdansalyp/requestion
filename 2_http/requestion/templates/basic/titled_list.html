@@ -1,0 +1,8 @@
+<div style="cursor:pointer;" onclick="window.location='#'"><div class="h2 underlined-title">{{ content.title }}</div></div>
+<div>
+    <h5 class="sidetag-container">
+        {% for tag in content.tags %}
+            <a href="#"><span class="badge badge-primary badge-link badge-special">{{ tag }}</span></a>
+        {% endfor %}
+    </h5>
+</div>

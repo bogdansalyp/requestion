@@ -16,10 +16,10 @@
             </div>
             <div class="col-md-4">
                 <div class="content-container">
-                    {% include 'basic/tag_list.html' %}
+                    {% include 'basic/titled_list.html' with content=side_tags %}
                 </div>
                 <div class="content-container">
-                    {% include 'basic/members_list.html' %}
+                    {% include 'basic/titled_list.html' with content=best_members %}
                 </div>
             </div>
         </div>

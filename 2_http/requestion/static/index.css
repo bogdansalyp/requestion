@@ -16,13 +16,17 @@
 }
 
 .card-text {
+    padding-bottom: 10%;
+}
+
+.card-content {
     position: relative;
     display: inline-block;
     height: 100%;
     width: 100%;
 }
 
-.card-text-bottom {
+.card-content-bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -42,7 +46,7 @@
     display: inline-block;
 }
 
-.card-title:after{
+.card-title:after {
     content: '';
     position: absolute;
     width: 0; height: 3px;
@@ -50,14 +54,51 @@
     margin-top: 2px;
     right: 0;
     background: #000000;
-    transition: width .8s ease;
-    -webkit-transition: width .8s ease;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
 }
 
 .card-body:hover .card-title:after{
     width: 100%;
     left: 0;
     background: #000000;
+}
+
+.underlined-title {
+    position: relative;
+    display: inline-block;
+}
+
+.underlined-title:after {
+    content: '';
+    position: absolute;
+    width: 0; height: 4px;
+    display: block;
+    margin-top: -2px;
+    right: 0;
+    background: #000000;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+
+.underlined-title:hover:after{
+    width: 100%;
+    left: 0;
+    background: #000000;
+}
+
+.sidetag-container {
+    padding-right: 15%;
+}
+
+.tag-container {
+    position: relative;
+}
+
+.card-tags {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .small-glyph {

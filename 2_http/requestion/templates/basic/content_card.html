@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="card question-card" style="cursor: pointer;" onclick="window.location='#'">
+<div class="card question-card" style="cursor: pointer;" onclick="window.location='/question/{{ card.id }}'">
     <div class="card-body">
         <div class="row">
             <div class="col-md-2">
@@ -18,18 +18,22 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <div class="card-text">
-                    <h5 class="card-title">{{ card.title }}</h5>
-                    <p>{{ card.text }}</p>
-                    <div class="row card-text-bottom">
+                <div class="card-content">
+                    <h5 class="card-title"><b>{{ card.title }}</b></h5>
+                    <p class="card-text">{{ card.text }}</p>
+                    <div class="row card-content-bottom">
+                        
                         <div class="col-md-5">
-                            <a href="#" class="card-link">answers({{ card.answers_amount }})</a>
+                            <button type="button" class="btn btn-primary">
+                                Answers <span class="badge badge-light">{{ card.answers_amount }}</span>
+                            </button>
                         </div>
-                        <div class="col-md-7">
-                            Tags:
+                        <div class="col-md-7 tag-container">
+                            <h5 class="card-tags">Tags:
                             {% for tag in card.tags %}
                                 <a href="#"><span class="badge badge-primary badge-link badge-special">{{ tag }}</span></a>
                             {% endfor %}
+                            </h5>
                         </div>
                     </div>
                 </div>
