@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.core.paginator import Paginator
 import numpy as np
 
 titles = [
@@ -59,19 +60,25 @@ best_members = [
 def main(request):
     template = loader.get_template("index.html")
 
+    questions_list = [
+        {
+            "id": 42,
+            "title": np.random.choice(titles),
+            "text": np.random.choice(texts),
+            "tags": [
+                np.random.choice(question_tags) for _ in range(
+                    np.random.randint(
+                        1,
+                        5))],
+            "answers_amount": np.random.randint(100)
+        } for _ in range(50)]
+    paginator = Paginator(questions_list, 10)
+    page = request.GET.get('page')
+    questions = paginator.get_page(page)
+
     context = {
         "title": "New Question",
-        "questions": [
-            {
-                "id": 42,
-                "title": np.random.choice(titles),
-                "text": np.random.choice(texts),
-                "tags": [
-                    np.random.choice(question_tags) for _ in range(
-                        np.random.randint(
-                            1,
-                            5))],
-                "answers_amount": np.random.randint(100)} for _ in range(50)],
+        "questions": questions,
         "side_tags": {
             "title": "Popular Tags",
             "tags": question_tags},
