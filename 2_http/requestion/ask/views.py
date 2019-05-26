@@ -106,22 +106,26 @@ def hot(request):
 
 def tag(request, tag_name):
     template = loader.get_template("tag.html")
+
+    questions_list = [
+        {
+            "id": 42,
+            "title": np.random.choice(titles),
+            "text": np.random.choice(texts),
+            "tags": [
+                np.random.choice(question_tags) for _ in range(
+                    np.random.randint(
+                        1,
+                        5))],
+            "answers_amount": np.random.randint(100)
+        } for _ in range(50)]
+    paginator = Paginator(questions_list, 10)
+    page = request.GET.get('page')
+    questions = paginator.get_page(page)
+
     context = {
         "title": "Questions by tag '{}'".format(tag_name),
-        "questions": [
-            {
-                "title": "How to build a moon park?",
-                "text": "Guys, I have a trouble with a Moon park...",
-                "tags": [tag_name, "perl", "python", "moon"],
-                "answers_amount": 3
-            },
-            {
-                "title": "How the hell?!?!?!",
-                "text": "Test test test",
-                "tags": [tag_name, "test", "test2", "test3"],
-                "answers_amount": 42
-            }
-        ],
+        "questions": questions,
         "side_tags": {
             "title": "Popular Tags",
             "tags": question_tags
