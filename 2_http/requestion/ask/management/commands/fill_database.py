@@ -23,7 +23,7 @@ class Command(BaseCommand):
             temp_user = User(
                 username='User{}'.format(ix+1),
                 registration_date=timezone.now(),
-                rating=5,
+                rating=ix,
                 path='user{}'.format(ix+1)
             )
             temp_user.save()
@@ -83,7 +83,7 @@ class Command(BaseCommand):
             temp_answer = Answer(
                 question=np.random.choice(Question.objects.all()),
                 text='Answer{}'.format(ix),
-                rating=42,
+                rating=ix,
                 creation_date=timezone.now(),
                 edit_date=timezone.now(),
                 is_correct=False
