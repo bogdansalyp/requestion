@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ask'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,7 @@ STATICFILES_DIRS = [
     # Here you tell django to look for a folder named 'assets'
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# AUTH_USER_MODEL = "users_management.UserManage"
+
+USE_TZ = True
