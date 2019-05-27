@@ -9,9 +9,7 @@
         <span class="step-links">
             {% if questions.has_previous %}
                 <a class="btn btn-primary" href="?page=1" role="button">&laquo; First</a>
-                <!-- <a href="?page=1">&laquo; first</a> -->
                 <a class="btn btn-primary" href="?page={{ questions.previous_page_number }}" role="button">Previous</a>
-                <!-- <a href="?page={{ questions.previous_page_number }}">previous</a> -->
             {% endif %}
     
             <span class="current">
@@ -19,9 +17,7 @@
             </span>
     
             {% if questions.has_next %}
-                <!-- <a href="?page={{ questions.next_page_number }}">next</a> -->
                 <a class="btn btn-primary" href="?page={{ questions.next_page_number }}" role="button">Next</a>
-                <!-- <a href="?page={{ questions.paginator.num_pages }}">last &raquo;</a> -->
                 <a class="btn btn-primary" href="?page={{ questions.paginator.num_pages }}" role="button">Last &raquo;</a>
             {% endif %}
         </span>

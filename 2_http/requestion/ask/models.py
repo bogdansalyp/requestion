@@ -2,12 +2,24 @@ from django.db import models
 from django.utils import timezone
 
 
+class TagManager(models.Manager):
+    def get_most_popular(self, number):
+        return self.all()[:number]
+
+
 class Tag(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
+    path = models.CharField(max_length=100)
+    objects = TagManager()
 
     def __str__(self):
         return self.name
+
+
+class UserManager(models.Manager):
+    def get_most_popular(self, number):
+        return self.all().order_by('-rating')[:number]
 
 
 class User(models.Model):
@@ -16,10 +28,18 @@ class User(models.Model):
     registration_date = models.DateTimeField(default=timezone.now())
     rating = models.IntegerField(default=0)
     path = models.CharField(max_length=200)
+    objects = UserManager()
 
     def __str__(self):
         return self.username
 
+
+class QuestionManager(models.Manager):
+    def with_tag(self, name):
+        tag = Tag.objects.filter(path=name).first()
+        question_ids = QuestionTag.objects.get(tag=tag).question.id
+        return self.filter(id=question_ids)
+        
 
 class Question(models.Model):
     id = models.AutoField(primary_key=True)
@@ -29,6 +49,7 @@ class Question(models.Model):
     rating = models.IntegerField(default=0)
     creation_date = models.DateTimeField(default=timezone.now(), blank=True)
     edit_date = models.DateTimeField(default=timezone.now(), blank=True)
+    objects = QuestionManager()
 
     def __str__(self):
         return self.text

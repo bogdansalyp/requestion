@@ -2,7 +2,7 @@
 <div>
     <h5 class="sidetag-container">
         {% for tag in content.tags %}
-            <a href="#"><span class="badge badge-primary badge-link badge-special">{{ tag }}</span></a>
+            <a href="/tag/{{ tag.path }}"><span class="badge badge-primary badge-link badge-special">{{ tag }}</span></a>
         {% endfor %}
     </h5>
 </div>

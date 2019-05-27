@@ -9,7 +9,7 @@
                 </div>
                 <div class="input-group container">
                     <div class="row">
-                        <input type="text" class="form-control col-md-8" placeholder="0">
+                        <input type="text" class="form-control col-md-8" placeholder="{{ card.rating }}">
                         <div class="btn-group-vertical col-md-4" role="group">
                             <button type="button" class="btn btn-outline-primary btn-sm btn-spinner"><small class="small-glyph">▲</small></button>
                             <button type="button" class="btn btn-outline-primary btn-sm btn-spinner"><small class="small-glyph">▼</small></button>
@@ -25,13 +25,13 @@
                         
                         <div class="col-md-5">
                             <button type="button" class="btn btn-primary">
-                                Answers <span class="badge badge-light">{{ card.answers_amount }}</span>
+                                Answers <span class="badge badge-light">{{ card.answer_set.count }}</span>
                             </button>
                         </div>
                         <div class="col-md-7 tag-container">
                             <h5 class="card-tags">Tags:
-                            {% for tag in card.tags %}
-                                <a href="#"><span class="badge badge-primary badge-link badge-special">{{ tag }}</span></a>
+                            {% for tag in card.questiontag_set.all %}
+                                <a href="#"><span class="badge badge-primary badge-link badge-special">{{ tag.tag }}</span></a>
                             {% endfor %}
                             </h5>
                         </div>

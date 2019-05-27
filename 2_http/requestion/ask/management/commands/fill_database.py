@@ -34,7 +34,8 @@ class Command(BaseCommand):
         print('FILLING TAG MODEL...')
         for ix in range(500):
             temp_tag = Tag(
-                name='Tag{}'.format(ix+1)
+                name='Tag{}'.format(ix+1),
+                path='tag{}'.format(ix+1)
             )
             temp_tag.save()
         print('ADDED {} TAGS'.format(Tag.objects.count()))
@@ -47,7 +48,7 @@ class Command(BaseCommand):
                 title='Question{}'.format(ix+1),
                 text='QuestionText{}'.format(ix+1),
                 author=np.random.choice(User.objects.all()),
-                rating=42,
+                rating=ix,
                 creation_date=timezone.now(),
                 edit_date=timezone.now()
             )
