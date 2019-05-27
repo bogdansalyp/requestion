@@ -18,8 +18,14 @@ class Tag(models.Model):
 
 
 class UserManager(models.Manager):
-    def get_most_popular(self, number):
-        return self.all().order_by('-rating')[:number]
+    def get_most_popular(self, amount):
+        return self.all().order_by('-rating')[:amount]
+
+    def newest(self, amount):
+        return self.all().order_by('-registration_date')[:amount]
+
+    def oldest(self, amount):
+        return self.all().order_by('registration_date')[:amount]
 
 
 class User(models.Model):
@@ -39,6 +45,21 @@ class QuestionManager(models.Manager):
         tag = Tag.objects.filter(path=name).first()
         question_ids = QuestionTag.objects.get(tag=tag).question.id
         return self.filter(id=question_ids)
+
+    def most_popular(self, amount):
+        return self.all().order_by('-rating')[:amount]
+
+    def newest(self, amount):
+        return self.all().order_by('-creation_date')[:amount]
+
+    def newest_all(self):
+        return self.all().order_by('-creation_date')
+
+    def oldest(self, amount):
+        return self.all().order_by('creation_date')[:amount]
+
+    def oldest_all(self):
+        return self.all().order_by('creation_date')
         
 
 class Question(models.Model):
