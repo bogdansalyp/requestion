@@ -23,7 +23,7 @@ class Command(BaseCommand):
             temp_user = User(
                 username='User{}'.format(ix+1),
                 registration_date=timezone.now(),
-                rating=ix,
+                rating=np.random.normal(scale=50),
                 path='user{}'.format(ix+1)
             )
             temp_user.save()
@@ -48,7 +48,7 @@ class Command(BaseCommand):
                 title='Question{}'.format(ix+1),
                 text='QuestionText{}'.format(ix+1),
                 author=np.random.choice(User.objects.all()),
-                rating=ix,
+                rating=np.random.normal(scale=50),
                 creation_date=timezone.now(),
                 edit_date=timezone.now()
             )
@@ -70,11 +70,13 @@ class Command(BaseCommand):
     def _fill_question_tag(self):
         print('FILLING QUESTION_TAG MODEL...')
         for ix in range(500):
-            temp_question_tag = QuestionTag(
-                tag=Tag.objects.all()[ix],
-                question=Question.objects.all()[ix]
-            )
-            temp_question_tag.save()
+            tags = np.random.choice(Tag.objects.all(), np.random.randint(10), replace=False)
+            for tag in tags:
+                temp_question_tag = QuestionTag(
+                    tag=tag,
+                    question=Question.objects.all()[ix]
+                )
+                temp_question_tag.save()
         print('ADDED {} QUESTION_TAG TAGS'.format(QuestionTag.objects.count()))
 
 
@@ -84,7 +86,7 @@ class Command(BaseCommand):
             temp_answer = Answer(
                 question=np.random.choice(Question.objects.all()),
                 text='Answer{}'.format(ix),
-                rating=ix,
+                rating=np.random.normal(scale=20),
                 creation_date=timezone.now(),
                 edit_date=timezone.now(),
                 is_correct=False
