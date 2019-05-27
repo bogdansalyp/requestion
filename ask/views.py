@@ -6,13 +6,14 @@ import numpy as np
 
 SIDE_USERS_NUMBER = 20
 SIDE_TAGS_NUMBER = 20
+PAGINATOR_QUESTIONS_AMOUNT = 10
 
 
 def main(request):
     template = loader.get_template("index.html")
 
-    questions_list = Question.objects.all()
-    paginator = Paginator(questions_list, 10)
+    questions_list = Question.objects.newest_all()
+    paginator = Paginator(questions_list, PAGINATOR_QUESTIONS_AMOUNT)
     page = request.GET.get('page')
     questions = paginator.get_page(page)
 
@@ -30,8 +31,15 @@ def main(request):
 
 def hot(request):
     template = loader.get_template("index.html")
+
+    questions_list = Question.objects.most_popular_all()
+    paginator = Paginator(questions_list, PAGINATOR_QUESTIONS_AMOUNT)
+    page = request.GET.get('page')
+    questions = paginator.get_page(page)
+
     context = {
         "title": "Hot Questions",
+        "questions": questions,
         "side_tags": {
             "title": "Popular Tags",
             "tags": Tag.objects.get_most_popular(SIDE_TAGS_NUMBER)

@@ -49,6 +49,9 @@ class QuestionManager(models.Manager):
     def most_popular(self, amount):
         return self.all().order_by('-rating')[:amount]
 
+    def most_popular_all(self):
+        return self.all().order_by('-rating')
+
     def newest(self, amount):
         return self.all().order_by('-creation_date')[:amount]
 

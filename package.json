@@ -9,6 +9,7 @@
     "scss-compile": "node-sass static/scss/*.scss static/css/index.css",
     "fill_db": "python3 manage.py fill_database",
     "build": "npm run scss-compile",
+    "migrate": "python3 manage.py makemigrations && python3 manage.py migrate",
     "start": "python3 manage.py runserver"
   },
   "author": "",

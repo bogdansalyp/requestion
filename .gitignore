@@ -1,5 +1,5 @@
 # Python files
-.pyc
+*.pyc
 __pycache__
 
 # OS X files
