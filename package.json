@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "autopep": "find  . -name '*.py' | xargs autopep8 --in-place --aggressive --aggressive",
     "scss-compile": "node-sass static/scss/*.scss static/css/index.css",
+    "fill_db": "python3 manage.py fill_database",
     "build": "npm run scss-compile",
     "start": "python3 manage.py runserver"
   },
