@@ -2,6 +2,9 @@
 *.pyc
 __pycache__
 
+# Database files
+*.sqlite3
+
 # OS X files
 .DS_Store
 .swp
